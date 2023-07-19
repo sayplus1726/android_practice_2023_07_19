@@ -62,5 +62,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void refreshButtonClicked(View view) {
+        webViewMain.reload();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(webViewMain.canGoBack()) {
+            webViewMain.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
